@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #3a1c71 0%, #d76d77 50%, #ffaf7b 100%);
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#gameContainer {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 4px solid #ff6b9d;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255,107,157,0.8), 0 0 70px rgba(255,175,123,0.45);
+    background: #ffd1dc;
+}
+
+canvas {
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+#ui {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #c2185b;
+    font-size: 17px;
+    font-weight: bold;
+    background: rgba(255,255,255,0.93);
+    padding: 13px 18px;
+    border-radius: 14px;
+    z-index: 10;
+    line-height: 1.65;
+    border: 2px solid rgba(255,107,157,0.45);
+    box-shadow: 0 5px 16px rgba(194,24,91,0.28);
+}
+
+#instructions {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #a02060;
+    background: rgba(255,255,255,0.93);
+    padding: 10px 22px;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.55;
+    white-space: nowrap;
+    border: 2px solid rgba(255,107,157,0.45);
+    box-shadow: 0 5px 16px rgba(194,24,91,0.22);
+}
+
+#winMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(45deg,#ff6b9d,#ffd93d,#ff8fab,#c44569,#ff6b9d);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease infinite;
+    color: #fff;
+    padding: 32px 44px;
+    border-radius: 26px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.35);
+    box-shadow: 0 0 60px rgba(255,107,157,0.85);
+    display: none;
+    z-index: 20;
+    border: 4px solid #fff;
+    max-width: 640px;
+}
+
+#winMessage h2 {
+    margin: 8px 0 12px;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+#winMessage p {
+    margin: 8px 0;
+}
+
+#loseMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(214,51,108,0.92);
+    color: #fff;
+    padding: 28px 40px;
+    border-radius: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+    z-index: 20;
+    border: 3px solid #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.45);
+}
+
+#loseMessage h2 {
+    margin: 0 0 8px;
+    font-size: 26px;
+}
+
+#loseMessage p {
+    margin: 0;
+    font-size: 17px;
+    opacity: 0.95;
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.pixel-heart {
+    font-size: 34px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
